@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SettingsPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LinksLandingPage(),
+        '/settings': (context) => SettingsPage(),
+      },
     );
   }
 }
