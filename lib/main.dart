@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_udemy/settings_page.dart';
 import 'links_landing_page.dart';
+import 'settings_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LinksLandingPage(),
+      home: SettingsPage(),
     );
   }
 }
