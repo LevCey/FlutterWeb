@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_udemy/not_found_page.dart';
 import 'package:flutter_web_udemy/settings_page.dart';
 import 'links_landing_page.dart';
 import 'settings_page.dart';
@@ -17,11 +18,19 @@ class MyApp extends StatelessWidget {
       title: 'Levent Ceyhan',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => LinksLandingPage(),
         '/settings': (context) => SettingsPage(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) {
+            return NotFoundPage();
+          },
+        );
       },
     );
   }
