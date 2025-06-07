@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_udemy/not_found_page.dart';
-import 'package:flutter_web_udemy/settings_page.dart';
-import 'links_landing_page.dart';
-import 'settings_page.dart';
+import 'package:flutter_web_udemy/SettingPage/settings_page.dart';
+import 'LinksLandingPage/links_landing_page.dart';
+import 'SettingPage/settings_page.dart';
 
 void main() {
   runApp(MyApp());
