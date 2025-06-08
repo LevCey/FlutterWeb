@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_udemy/SettingPage/preview_section.dart';
+import 'package:flutter_web_udemy/SettingPage/previewSection.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);

@@ -25,9 +25,12 @@ class LinksLandingPage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           for (var document in documents)
-            ButtonLink(
-              title: document.title,
-              url: document.url,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: ButtonLink(
+                title: document.title,
+                url: document.url,
+              ),
             ),
           Spacer(key: key, flex: 5),
           const Footer(),
