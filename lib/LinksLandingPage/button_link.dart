@@ -26,14 +26,25 @@ class ButtonLink extends StatelessWidget {
       child: SizedBox(
         width: width > 680 ? 680 : width * 0.95,
         child: TextButton(
-          style: TextButton.styleFrom(
-              backgroundColor: Colors.tealAccent,
-              padding: const EdgeInsets.all(25)),
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.tealAccent),
+            padding: MaterialStateProperty.all(const EdgeInsets.all(25)),
+            foregroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.hovered)) {
+                  return Colors.red; // Hover rengi
+                }
+                return Colors.black45; // Normal rengi
+              },
+            ),
+          ),
+          /*onHover: (hovered) {
+            print('hovered: $hovered');
+          },*/
           onPressed: () => _launchUrl(url),
           child: Text(
             title,
-            style: const TextStyle(
-                color: Colors.black45, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
       ),
