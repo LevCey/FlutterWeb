@@ -16,10 +16,10 @@ class Footer extends StatelessWidget {
                 .bodyText1
                 ?.copyWith(color: Colors.blue)),
         const SizedBox(width: 7),
-        Image.network(
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToQOZyJGE9BaPUsDRwA2zLVSChrZQD0qngPQ&s',
-          width: 25,
-        )
+        const Icon(
+          Icons.business_rounded,
+          color: Colors.blueAccent,
+        ),
       ],
     );
   }

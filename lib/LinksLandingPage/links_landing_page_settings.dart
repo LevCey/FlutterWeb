@@ -26,7 +26,7 @@ class LinksLandingPageSettings extends StatelessWidget {
           Text(handle,
               style: Theme.of(context)
                   .textTheme
-                  .headline6
+                  .bodyText1
                   ?.copyWith(color: Colors.blue)),
           const SizedBox(height: 20),
           for (var document in documents)

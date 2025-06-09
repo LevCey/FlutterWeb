@@ -6,5 +6,5 @@ const imageUrl =
 var documents = [
   LinkData(title: 'Youtube', url: 'https://www.youtube.com'),
   LinkData(title: 'LinkedIn', url: 'https://www.linkedin.com'),
-  LinkData(title: 'Facebook', url: 'https://www.facebook.com')
+  LinkData(title: 'Facebook', url: 'https://www.facebook.com'),
 ];

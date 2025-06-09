@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_udemy/LinksLandingPage/links_landing_page.dart';
 import 'package:flutter_web_udemy/LinksLandingPage/links_landing_page_settings.dart';
 
 class PreviewSection extends StatelessWidget {
@@ -9,24 +8,38 @@ class PreviewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 28.0),
-              child: Text(
-                'Preview',
-                style: Theme.of(context).textTheme.headline3,
-              ),
+    return Expanded(
+      flex: 2,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final width = constraints.maxWidth;
+
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(3.0),
+                  child: Text(
+                    'Ön İzleme Ekranı',
+                    style: Theme.of(context).textTheme.headline3,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Container(
+                  padding: EdgeInsets.all(17),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 7, color: Colors.blueGrey),
+                      borderRadius: BorderRadius.all(Radius.circular(17))),
+                  child: LinksLandingPageSettings(
+                    handle: '@socialhandle',
+                  ),
+                ),
+                const SizedBox(height: 3),
+              ],
             ),
-            const SizedBox(height: 12),
-            LinksLandingPageSettings(
-              handle: '@socialhandle',
-            ),
-            const SizedBox(height: 3),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

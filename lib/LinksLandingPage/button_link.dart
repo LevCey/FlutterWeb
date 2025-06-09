@@ -24,7 +24,7 @@ class ButtonLink extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints) {
         final width = constraints.maxWidth;
         return Padding(
-          padding: const EdgeInsets.only(bottom: 8),
+          padding: EdgeInsets.only(bottom: 8),
           child: SizedBox(
             width: width > 680 ? 680 : width * 0.95,
             child: TextButton(
@@ -40,13 +40,11 @@ class ButtonLink extends StatelessWidget {
                   },
                 ),
               ),
-              /*onHover: (hovered) {
-              print('hovered: $hovered');
-            },*/
               onPressed: () => _launchUrl(url),
               child: Text(
                 title,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
               ),
             ),
           ),
