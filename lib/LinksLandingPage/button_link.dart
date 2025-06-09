@@ -43,8 +43,7 @@ class ButtonLink extends StatelessWidget {
               onPressed: () => _launchUrl(url),
               child: Text(
                 title,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
               ),
             ),
           ),
