@@ -3,29 +3,18 @@ import 'button_link.dart';
 import '../constants.dart';
 import 'footer.dart';
 
-class LinksLandingPage extends StatelessWidget {
-  final VoidCallback onToggleTheme;
+class LinksLandingPageSettings extends StatelessWidget {
   final String handle;
 
-  LinksLandingPage({
+  LinksLandingPageSettings({
     Key? key,
     required this.handle,
-    required this.onToggleTheme,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Link Tree'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.brightness_6),
-            onPressed: onToggleTheme,
-          ),
-        ],
-      ),
-      body: Column(
+    return Material(
+      child: Column(
         children: [
           const SizedBox(height: 35),
           const CircleAvatar(
@@ -48,10 +37,6 @@ class LinksLandingPage extends StatelessWidget {
           const SizedBox(height: 66), //Spacer(flex: 5),
           const Footer(),
           const SizedBox(height: 29),
-          TextButton(
-            child: Text('Toggle Theme'),
-            onPressed: onToggleTheme,
-          ),
         ],
       ),
     );

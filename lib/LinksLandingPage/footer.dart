@@ -10,7 +10,11 @@ class Footer extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Made in Flutter', style: TextStyle(fontSize: 17)),
+        Text('Made in Flutter',
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1
+                ?.copyWith(color: Colors.blue)),
         const SizedBox(width: 7),
         Image.network(
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToQOZyJGE9BaPUsDRwA2zLVSChrZQD0qngPQ&s',

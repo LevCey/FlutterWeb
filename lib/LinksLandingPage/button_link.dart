@@ -20,34 +20,38 @@ class ButtonLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: SizedBox(
-        width: width > 680 ? 680 : width * 0.95,
-        child: TextButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.tealAccent),
-            padding: MaterialStateProperty.all(const EdgeInsets.all(25)),
-            foregroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.hovered)) {
-                  return Colors.red; // Hover rengi
-                }
-                return Colors.black45; // Normal rengi
-              },
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final width = constraints.maxWidth;
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: SizedBox(
+            width: width > 680 ? 680 : width * 0.95,
+            child: TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.tealAccent),
+                padding: MaterialStateProperty.all(const EdgeInsets.all(25)),
+                foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.hovered)) {
+                      return Colors.red; // Hover rengi
+                    }
+                    return Colors.black45; // Normal rengi
+                  },
+                ),
+              ),
+              /*onHover: (hovered) {
+              print('hovered: $hovered');
+            },*/
+              onPressed: () => _launchUrl(url),
+              child: Text(
+                title,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
-          /*onHover: (hovered) {
-            print('hovered: $hovered');
-          },*/
-          onPressed: () => _launchUrl(url),
-          child: Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

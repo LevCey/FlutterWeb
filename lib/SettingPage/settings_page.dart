@@ -11,9 +11,17 @@ class SettingsPage extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: Container(color: Colors.blueGrey.shade50),
+            child: Container(
+              color: Colors.blueGrey.shade100,
+            ),
           ),
-          PreviewSection(),
+          Expanded(
+            flex: 2,
+            child: Container(
+              // color: Colors.white,
+              child: PreviewSection(),
+            ),
+          ),
         ],
       ),
     );
