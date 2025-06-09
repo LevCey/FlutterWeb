@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_udemy/constants.dart';
-import 'delete_button.dart';
-import 'edit_button.dart';
+import 'delete_icon_button.dart';
+import 'edit_icon_button.dart';
 
 class ButtonSettingsSection extends StatelessWidget {
   ButtonSettingsSection({
@@ -39,29 +39,31 @@ class ButtonSettingsSection extends StatelessWidget {
                     onPressed: () {},
                   ),
                 ),
-                const SizedBox(height: 18),
+                const SizedBox(height: 7),
                 SizedBox(
                   width: constraints.maxWidth * 0.6,
                   height: constraints.maxHeight * 0.6,
-                  child: ReorderableListView(
-                    //shrinkWrap: true,
-                    children: [
-                      for (var document in documents)
-                        ListTile(
-                          tileColor: Colors.green.shade300,
-                          contentPadding: EdgeInsets.symmetric(vertical: 8),
-                          title: Text(document.title),
-                          key: Key(document.title),
-                          leading: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              EditButton(),
-                              DeleteButton(),
-                            ],
+                  child: Scrollbar(
+                    thumbVisibility: true,
+                    child: ReorderableListView(
+                      children: [
+                        for (var document in documents)
+                          ListTile(
+                            tileColor: Colors.green.shade300,
+                            contentPadding: EdgeInsets.symmetric(vertical: 8),
+                            title: Text(document.title),
+                            key: Key(document.title),
+                            leading: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                EditButton(),
+                                DeleteButton(),
+                              ],
+                            ),
                           ),
-                        ),
-                    ],
-                    onReorder: ((oldIndex, newIndex) {}),
+                      ],
+                      onReorder: ((oldIndex, newIndex) {}),
+                    ),
                   ),
                 ),
               ],
