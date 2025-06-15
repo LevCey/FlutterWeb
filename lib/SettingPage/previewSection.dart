@@ -12,13 +12,11 @@ class PreviewSection extends StatelessWidget {
       flex: 2,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final width = constraints.maxWidth;
-
           return SingleChildScrollView(
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: Text(
                     'Ön İzleme Ekranı',
                     style: Theme.of(context).textTheme.headline3,
@@ -27,10 +25,11 @@ class PreviewSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Container(
-                  padding: EdgeInsets.all(17),
+                  padding: const EdgeInsets.all(17),
                   decoration: BoxDecoration(
                       border: Border.all(width: 7, color: Colors.blueGrey),
-                      borderRadius: BorderRadius.all(Radius.circular(17))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(17))),
                   child: LinksLandingPageSettings(
                     handle: '@socialhandle',
                   ),

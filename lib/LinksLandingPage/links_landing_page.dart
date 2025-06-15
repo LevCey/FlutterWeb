@@ -20,7 +20,7 @@ class LinksLandingPage extends StatelessWidget {
         title: const Text('Link Tree'),
         actions: [
           IconButton(
-            icon: Icon(Icons.brightness_6),
+            icon: const Icon(Icons.brightness_6),
             onPressed: onToggleTheme,
           ),
         ],

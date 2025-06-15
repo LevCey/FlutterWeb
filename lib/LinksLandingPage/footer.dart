@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
                 ?.copyWith(color: Colors.blue)),
         const SizedBox(width: 7),
         const Icon(
-          Icons.business_rounded,
+          Icons.money,
           color: Colors.blueAccent,
         ),
       ],

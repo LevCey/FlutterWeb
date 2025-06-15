@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
           builder: (context) {
-            return NotFoundPage();
+            return const NotFoundPage();
           },
         );
       },
